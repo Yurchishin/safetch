@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "settings": {
+    "jest": {
+      "version": 29
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": ["@anylint/eslint-config/typescript"],
+      "rules": {
+        "import/no-unresolved": [
+          "error",
+          {
+            "commonjs": true,
+            "caseSensitive": true,
+            "ignore": ["bun:*"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js"],
+      "extends": ["@anylint/eslint-config/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.cjs", "*.mjs"],
+      "extends": ["@anylint/eslint-config/javascript"],
+      "env": {
+        "node": true,
+        "commonjs": true
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.test.ts", "*.spec.ts"],
+      "extends": ["@anylint/eslint-config/jest", "@anylint/eslint-config/tests"],
+      "rules": {}
+    }
+  ]
+}

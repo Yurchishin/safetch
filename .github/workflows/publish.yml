@@ -1,0 +1,60 @@
+on:
+  workflow_dispatch:
+    branches:
+      - master
+    inputs:
+      increment:
+        description: Increment version type
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+name: Publish package
+
+jobs:
+  publish:
+    name: Publish package (${{inputs.increment}})
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+        with:
+          ref: ${{github.event.ref}}
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        name: Setup node
+        with:
+          node-version: 18.14.2
+          registry-url: https://registry.npmjs.org/
+      - run: npm i bun -g
+        name: Install bun
+      - run: bun install --frozen-lockfile
+        name: Install dependencies
+      - run: |
+          echo "Bun version: $(bun -v)"
+          echo "NodeJS version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+        name: Display versions
+
+      - run: bun run type-check
+        name: Type check code
+      - run: bun run test
+        name: Test code
+      - run: bun run format
+        name: Format code
+      - run: bun run lint
+        name: Lint code
+
+      - run: bun run build
+        name: Build code
+
+      - run: bun run release --increment ${{inputs.increment}}
+        name: Publish ${{inputs.increment}} release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

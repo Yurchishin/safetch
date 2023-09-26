@@ -1,0 +1,69 @@
+{
+  "name": "safetch",
+  "private": false,
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Yurii Rybak",
+  "homepage": "https://github.com/Yurchishin/safetch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yurchishin/safetch.git"
+  },
+  "keywords": [
+    "fetch",
+    "typesafe"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "type": "module",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "bun run type-check -- --watch",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "lint": "eslint . --ext .js,.cjs,.mjs,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.cjs,.mjs,.jsx,.ts,.tsx --fix",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "fix": "bun run lint:fix && bun run format:fix",
+    "release": "release-it --ci --config .release-it.js",
+    "commit": "commit",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@anylint/commitlint-config": "1.0.5",
+    "@anylint/eslint-config": "1.0.5",
+    "@anylint/prettier-config": "1.0.5",
+    "@commitlint/cli": "17.7.1",
+    "@commitlint/prompt-cli": "17.7.1",
+    "@esfx/type-model": "1.0.0",
+    "@release-it/conventional-changelog": "7.0.2",
+    "bun-types": "latest",
+    "conventional-changelog-conventionalcommits": "7.0.2",
+    "eslint": "8.50.0",
+    "husky": "8.0.3",
+    "next": "13.5.3",
+    "prettier": "3.0.3",
+    "qs": "6.11.2",
+    "release-it": "16.2.0",
+    "type-fest": "4.3.1",
+    "typescript": "5.2.2",
+    "zod": "3.22.2"
+  },
+  "peerDependencies": {
+    "qs": "6.11.2",
+    "zod": "3.22.2"
+  },
+  "prettier": "@anylint/prettier-config",
+  "publishConfig": {
+    "access": "public",
+    "@anylint:registry": "https://registry.npmjs.org"
+  }
+}

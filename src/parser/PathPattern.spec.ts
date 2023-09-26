@@ -1,0 +1,30 @@
+import type { ExpectType, Test } from '@esfx/type-model/test'
+import type { ValidatePathPattern } from './PathPattern'
+
+type _ = [
+  Test<ExpectType<ValidatePathPattern<string>, never>>,
+  Test<ExpectType<ValidatePathPattern<''>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/'>, '/'>>,
+  Test<ExpectType<ValidatePathPattern<'//'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'foo'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/foo'>, '/foo'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/bar'>, '/foo/bar'>>,
+  Test<ExpectType<ValidatePathPattern<'/[foo]'>, '/[foo]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]'>, '/foo/[bar]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/baz'>, '/foo/[bar]/baz'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[baz]'>, '/foo/[bar]/[baz]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[baz]/qux'>, '/foo/[bar]/[baz]/qux'>>,
+  Test<ExpectType<ValidatePathPattern<'/[...foo]'>, '/[...foo]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[...bar]'>, '/foo/[...bar]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[...bar]/baz'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[...baz]'>, '/foo/[bar]/[...baz]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[...baz]/qux'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/[...foo]/bar'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/[[...foo]]'>, '/[[...foo]]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[[...bar]]'>, '/foo/[[...bar]]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[[...bar]]/baz'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[[...baz]]'>, '/foo/[bar]/[[...baz]]'>>,
+  Test<ExpectType<ValidatePathPattern<'/foo/[bar]/[[...baz]]/qux'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/[[...foo]]/bar'>, never>>,
+  Test<ExpectType<ValidatePathPattern<'/[[...foo]]/[...bar]'>, never>>,
+]
