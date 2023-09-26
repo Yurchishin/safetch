@@ -1,6 +1,7 @@
 const version = '${version}'
 const packageName = process.env.npm_package_name
-const scope = packageName.split('/')[1]
+// const scope = packageName.split('/')[1]
+const scope = packageName
 
 module.exports = {
   plugins: {

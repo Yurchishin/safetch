@@ -33,7 +33,7 @@
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
     "fix": "bun run lint:fix && bun run format:fix",
-    "release": "release-it --ci --config .release-it.js",
+    "release": "release-it --ci --config .release-it.cjs",
     "commit": "commit",
     "prepare": "husky install"
   },
