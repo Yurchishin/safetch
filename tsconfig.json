@@ -16,8 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "types": [
-      "bun-types", // add Bun global,
-      "next"
+      "bun-types" // add Bun global,
     ]
   },
   "include": ["src/**/*", "scripts/**/*", "package.json"]
