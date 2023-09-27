@@ -1,3 +1,7 @@
+
+
+## [0.0.3](https://github.com/Yurchishin/safetch/compare/safetch-v0.0.2...safetch-v0.0.3) (2023-09-27)
+
 ## 0.0.2 (2023-09-26)
 
 ### Features
