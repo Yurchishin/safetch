@@ -1,4 +1,4 @@
-export { default } from './fetch'
+export { default as safetch } from './fetch'
 export type { RequestMethods, SafeRequestInit } from './fetch'
 export { default as TypeSafeResponse } from './responce'
 export { origin, Origin } from './origin'
