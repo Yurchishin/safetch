@@ -1,5 +1,12 @@
 
 
+## [1.0.1](https://github.com/Yurchishin/safetch/compare/safetch-v1.0.0...safetch-v1.0.1) (2023-10-14)
+
+
+### Bug Fixes
+
+* **description:** added package description ([7ef700d](https://github.com/Yurchishin/safetch/commit/7ef700de4be3c98ae93007807832c341af629108))
+
 ## [1.0.0](https://github.com/Yurchishin/safetch/compare/safetch-v0.0.3...safetch-v1.0.0) (2023-10-13)
 
 
