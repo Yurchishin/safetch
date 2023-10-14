@@ -1,4 +1,4 @@
-![AnyLint Logo](https://res.cloudinary.com/da0ggymug/image/upload/v1695855927/safetch_full.png)
+![Safetch Logo](https://res.cloudinary.com/da0ggymug/image/upload/v1695855927/safetch_full.png)
 
 **Safetch** is a TypeScript library that provide typesafe [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) and [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) API. All API is immutable and typesafe.
 

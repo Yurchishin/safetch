@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "Yurii Rybak",
+  "description": "Type-Safe Fetch & URL API",
   "homepage": "https://github.com/Yurchishin/safetch",
   "repository": {
     "type": "git",
