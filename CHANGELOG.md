@@ -1,5 +1,7 @@
 
 
+## [1.1.1](https://github.com/Yurchishin/safetch/compare/safetch-v1.1.0...safetch-v1.1.1) (2023-11-08)
+
 ## [1.1.0](https://github.com/Yurchishin/safetch/compare/safetch-v1.0.1...safetch-v1.1.0) (2023-11-08)
 
 
