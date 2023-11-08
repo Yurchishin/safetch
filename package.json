@@ -23,6 +23,10 @@
   ],
   "type": "module",
   "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "bun run scripts/build.ts",
     "type-check": "tsc --noEmit",
@@ -47,6 +51,7 @@
     "@esfx/type-model": "1.0.0",
     "@release-it/conventional-changelog": "7.0.2",
     "@types/qs": "6.9.8",
+    "bun-plugin-dts": "0.2.1",
     "bun-types": "latest",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "eslint": "8.50.0",

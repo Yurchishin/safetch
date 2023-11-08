@@ -1,5 +1,6 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console,import/no-extraneous-dependencies */
 import path from 'node:path'
+import dts from 'bun-plugin-dts'
 import packageJson from '../package.json'
 
 const peerDependencies = Object.keys(packageJson.peerDependencies)
@@ -20,6 +21,7 @@ const bundle = async (minify: boolean) => {
     minify,
     external: peerDependencies,
     root: './src',
+    plugins: [dts()],
   })
 
   if (build.success) {
