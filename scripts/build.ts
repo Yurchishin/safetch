@@ -43,5 +43,6 @@ const bundle = async (minify: boolean) => {
   }
 }
 
-await bundle(false)
-await bundle(true)
+const build = () => Promise.all([bundle(false), bundle(true)])
+
+export default build

@@ -28,7 +28,8 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "bun run scripts/build.ts",
+    "build": "bun run scripts/build-command.ts",
+    "build:watch": "bun run scripts/build-watch-command.ts",
     "type-check": "tsc --noEmit",
     "type-check:watch": "bun run type-check -- --watch",
     "test": "bun test",
