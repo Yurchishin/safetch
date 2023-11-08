@@ -1,5 +1,12 @@
 
 
+## [1.1.0](https://github.com/Yurchishin/safetch/compare/safetch-v1.0.1...safetch-v1.1.0) (2023-11-08)
+
+
+### Features
+
+* **dts:** added .d.ts file to output ([5d3eee9](https://github.com/Yurchishin/safetch/commit/5d3eee91b13fac3ee8dbcb5950205fe5dd991907))
+
 ## [1.0.1](https://github.com/Yurchishin/safetch/compare/safetch-v1.0.0...safetch-v1.0.1) (2023-10-14)
 
 
